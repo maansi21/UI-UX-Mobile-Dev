@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Profile</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #262626;
+        }
+
+        .profile-container {
+            max-width: 935px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+        }
+
+        .profile-details {
+            flex: 1;
+        }
+
+        .profile-details h1 {
+            font-size: 28px;
+            font-weight: 300;
+            margin: 0 0 10px;
+        }
+
+        .profile-details .stats {
+            display: flex;
+            gap: 25px;
+            margin: 15px 0;
+        }
+
+        .profile-details .stats .stat {
+            font-size: 16px;
+        }
+
+        .profile-details .stats .stat span {
+            font-weight: bold;
+        }
+
+        .profile-details .bio {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        .action-button {
+            margin-top: 10px;
+            padding: 5px 15px;
+            font-size: 14px;
+            color: #262626;
+            border: 1px solid #dbdbdb;
+            background-color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .action-button:hover {
+            background-color: #f7f7f7;
+        }
+
+        .post-grid {
+            max-width: 935px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .post {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+
+        .post .thumbnail-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .post:hover .thumbnail-overlay {
+            opacity: 1;
+        }
+
+        .thumbnail-overlay i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+    <div class="profile-details">
+        <h1>mysterious_girl_igdtuw</h1>
+        <button class="action-button" id="followButton">Follow</button>
+        <div class="stats">
+            <div class="stat"><span>256</span> posts</div>
+            <div class="stat"><span>1.2k</span> followers</div>
+            <div class="stat"><span>180</span> following</div>
+        </div>
+        <p class="bio">Web Developer | Coffee Lover | Traveler</p>
+    </div>
+</div>
+
+<div class="post-grid">
+    <div class="post">
+        <img src="post1.jpg" alt="Post 1">
+        <div class="thumbnail-overlay">
+            <i>&#x2764;</i> 123
+        </div>
+    </div>
+    <div class="post">
+        <img src="post2.jpg" alt="Post 2">
+        <div class="thumbnail-overlay">
+            <i>&#x2764;</i> 200
+        </div>
+    </div>
+    <div class="post">
+        <img src="post3.jpg" alt="Post 3">
+        <div class="thumbnail-overlay">
+            <i>&#x2764;</i> 98
+        </div>
+    </div>
+    <div class="post">
+        <img src="post4.jpg" alt="Post 4">
+        <div class="thumbnail-overlay">
+            <i>&#x2764;</i> 176
+        </div>
+    </div>
+    <div class="post">
+        <img src="post5.jpg" alt="Post 5">
+        <div class="thumbnail-overlay">
+            <i>&#x2764;</i> 210
+        </div>
+    </div>
+    <div class="post">
+        <img src="post6.jpg" alt="Post 6">
+        <div class="thumbnail-overlay">
+            <i>&#x2764;</i> 145
+        </div>
+    </div>
+</div>
+
+<script>
+    const followButton = document.getElementById('followButton');
+
+    followButton.addEventListener('click', () => {
+        if (followButton.textContent === 'Follow') {
+            followButton.textContent = 'Unfollow';
+            followButton.style.color = '#fff';
+            followButton.style.backgroundColor = '#0095f6';
+            followButton.style.borderColor = '#0095f6';
+        } else {
+            followButton.textContent = 'Follow';
+            followButton.style.color = '#262626';
+            followButton.style.backgroundColor = '#fff';
+            followButton.style.borderColor = '#dbdbdb';
+        }
+    });
+</script>
+
+</body>
+</html>
